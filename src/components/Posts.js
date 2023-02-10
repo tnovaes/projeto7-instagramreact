@@ -35,9 +35,9 @@ export default function Posts() {
 
     return (
         <div class="posts">
-            {usuarios.map(u => <Post img={u.img} nome={u.nome} 
-            conteudo={u.conteudo} conteudoAlt={u.conteudoAlt} 
-            imgCurtida={u.imgCurtida} nomeCurtida={u.nomeCurtida} numeroCurtidas={u.numeroCurtidas} />)}
+            {usuarios.map(u => <Post img={u.img} nome={u.nome}
+                conteudo={u.conteudo} conteudoAlt={u.conteudoAlt}
+                imgCurtida={u.imgCurtida} nomeCurtida={u.nomeCurtida} numeroCurtidas={u.numeroCurtidas} />)}
         </div>
     );
 }

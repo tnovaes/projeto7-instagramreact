@@ -28,9 +28,9 @@ export default function Post(props) {
 
             <div class="fundo">
                 <div class="acoes">
-                    <div data-test="like-post">
-                        {curtida ? <ion-icon class="vermelho" name="heart" onClick={() => { setCurtida(false); setNumeroCurtidas(numeroCurtidas - 1) }} /> :
-                            <ion-icon class="" name="heart-outline" onClick={() => { setCurtida(true); setNumeroCurtidas(numeroCurtidas + 1) }} />}
+                    <div>
+                        {curtida ? <ion-icon data-test="like-post" class="vermelho" name="heart" onClick={() => { setCurtida(false); setNumeroCurtidas(numeroCurtidas - 1) }} /> :
+                            <ion-icon data-test="like-post" class="" name="heart-outline" onClick={() => { setCurtida(true); setNumeroCurtidas(numeroCurtidas + 1) }} />}
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>

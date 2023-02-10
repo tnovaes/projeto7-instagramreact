@@ -6,7 +6,7 @@ export default function Post(props) {
     const [numeroCurtidas, setNumeroCurtidas] = useState(props.numeroCurtidas);
 
     return (
-        <div class="post">
+        <div data-test="post" class="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.img} alt={props.nome} />
@@ -18,7 +18,7 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.conteudo} alt={props.conteudoAlt} onDoubleClick={() => {
+                <img data-test="post-image" src={props.conteudo} alt={props.conteudoAlt} onDoubleClick={() => {
                     if (!curtida) {
                         setNumeroCurtidas(numeroCurtidas + 1);
                     }
@@ -28,13 +28,13 @@ export default function Post(props) {
 
             <div class="fundo">
                 <div class="acoes">
-                    <div>
+                    <div data-test="like-post">
                         {curtida ? <ion-icon class="vermelho" name="heart" onClick={() => { setCurtida(false); setNumeroCurtidas(numeroCurtidas - 1) }} /> :
                             <ion-icon class="" name="heart-outline" onClick={() => { setCurtida(true); setNumeroCurtidas(numeroCurtidas + 1) }} />}
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
-                    <div>
+                    <div data-test="save-post">
                         {salvar ? <ion-icon name="bookmark" onClick={() => setSalvar(false)} /> :
                             <ion-icon name="bookmark-outline" onClick={() => { setSalvar(true) }} />}
                     </div>
@@ -43,7 +43,7 @@ export default function Post(props) {
                 <div class="curtidas">
                     <img src={props.imgCurtida} alt={props.nomeCurtida} />
                     <div class="texto">
-                        Curtido por <strong>{props.nomeCurtida}</strong> e <strong>outras {numeroCurtidas} pessoas</strong>
+                        Curtido por <strong>{props.nomeCurtida}</strong> e <strong>outras <span data-test="likes-number">{numeroCurtidas}</span> pessoas</strong>
                     </div>
                 </div>
             </div>
